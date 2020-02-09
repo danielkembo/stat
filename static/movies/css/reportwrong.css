@@ -1,20 +1,20 @@
 a { text-decoration: none; }
 
 .download {
+	background: #9b1308;
 	position: absolute;
-	left:0.2%;
-	top:55px;
-	width: 130px;
-	height: 30px;
-	background-color:#0d0d0d;
+	top: calc(95% - 15px);
+	right: calc(50% - 115px);
+	width: 230px;
+	height: 60px;
 	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.075), rgba(255,255,255,.045));
 	background-image: linear-gradient(to top, rgba(0,0,0,.075), rgba(255,255,255,.045));
     box-shadow: inset 0 -1px 0 rgba(0,0,0,.09),inset 0 1px 0 rgba(255,255,255,.04), 0 0 1px rgba(0,0,0,.3), 0 0 10px rgba(0,0,0,.1);
 	border-radius: 100px;
-	color: white;
-	line-height: 30px;
+	color: rgba(255,255,255,.9);
+	line-height: 60px;
 	text-align: center;
-	letter-spacing: 1px;
+	letter-spacing: 5px;
 	overflow: hidden;
 	transition: all .3s cubic-bezier(.67,.13,.1,.81), transform .15s cubic-bezier(.67,.13,.1,.81);
 }
@@ -35,10 +35,10 @@ a { text-decoration: none; }
 	transition: all .3s cubic-bezier(.67,.13,.1,.81);
 }
 .download:before {
-	content: 'Not Working?';
+	content: 'DOWNLOAD';
 }
 .download:after {
-	content: 'Click to Report a Problem';
+	content: 'Click to select quality';
 	top: -60px;
 	opacity: 0;
 }
@@ -53,18 +53,22 @@ a { text-decoration: none; }
 
 .platforms {
 	position: absolute;
-	left:0.2%;
-	top:55px;
-	height: 200px;
-	width: 580px;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	left:;
+	top:10px;
+	height: 280px;
+	width: 290px;
 	background: #fff;
 	border-radius: 5px;
 	visibility: hidden;
 	transform: scale(.9);
 	opacity: 0;
 	overflow: hidden;
+	overflow: hidden;
 	transition: all .3s cubic-bezier(.67,.13,.1,.81);
-	z-index:89;
 }
 .platforms:target {
 	visibility: visible;
@@ -72,31 +76,36 @@ a { text-decoration: none; }
 	opacity: 1;
 }
 .platforms a {
-	position: absolute;
+	position: relative;
 	top: 200px;
-	left: 10px;
-	width: 180px;
-	height: 180px;
+	left: 1px;
+	width: 90px;
+	height: 90px;
 	border-radius: 5px;
 	color: #9b1308;
 	text-transform: uppercase;
 	transition: top .5s cubic-bezier(.67,.13,.1,.81);
 }
 .platforms a:nth-child(1) {
-	transition-delay: .1s;
+	transition-delay: .2s;
 }
 .platforms a:nth-child(2) {
-	left: 200px;
+
 }
 .platforms a:nth-child(3) {
-	left: 390px;
-	transition-delay: .1s;
+	transition-delay: .6s;
+}
+.platforms a:nth-child(4) {
+	transition-delay: .68s;
+}
+.platforms a:nth-child(5) {
+	transition-delay: .s;
 }
 .platforms:target a {
 	top: 10px;
 }
 .platforms a:hover {
-	background: #E5F4FF;
+	background: rgba(155, 19, 8, 0.2);
 	box-shadow: 0 0 0 1px #9b1308;
 }
 .platforms a:before {
@@ -105,8 +114,8 @@ a { text-decoration: none; }
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	height: 60px;
-	line-height: 60px;
+	height: 30px;
+	line-height: 40px;
 	text-align: center;
 }
 .platforms a:after {
@@ -121,18 +130,25 @@ a { text-decoration: none; }
 }
 
 .platforms a:nth-child(1):after {
-	content: url('https://api.iconify.design/ion:ios-play-circle.svg?color=%239b1308&height=60px');
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&height=60px');
 	vertical-align: -0.125em;
 }
 .platforms a:nth-child(2):after {
-	content: url('https://api.iconify.design/ion:ios-square.svg?color=%239b1308&height=60px');
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&height=60px');
 vertical-align: -0.125em;
 }
 .platforms a:nth-child(3):after {
 	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&height=60px');
 	vertical-align: -0.125em;
 }
-
+.platforms a:nth-child(4):after {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&height=60px');
+vertical-align: -0.125em;
+}
+.platforms a:nth-child(5):after {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&height=60px');
+	vertical-align: -0.125em;
+}
 .installer {
 	position: fixed;
 	left:0.2%;
@@ -248,19 +264,26 @@ vertical-align: -0.125em;
 	letter-spacing: 5px;
 	color: #aaa;
 }
-.installer#windows .info:before {
-	content: url('https://api.iconify.design/ion:ios-play-circle.svg?color=%239b1308&width=180px&height=180px');
-	vertical-align: -0.125em;
-}
-.installer#mac .info:before {
-	content: url('https://api.iconify.design/ion:ios-square.svg?color=%239b1308&width=180px&height=180px');
-	vertical-align: -0.125em;
-}
-.installer#linux .info:before {
+.installer#HD .info:before {
 	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&width=180px&height=180px');
 	vertical-align: -0.125em;
 }
-
+.installer#Standard .info:before {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&width=180px&height=180px');
+	vertical-align: -0.125em;
+}
+.installer#H-HD .info:before {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&width=180px&height=180px');
+	vertical-align: -0.125em;
+}
+.installer#Original .info:before {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&width=180px&height=180px');
+	vertical-align: -0.125em;
+}
+.installer#Low .info:before {
+	content: url('https://api.iconify.design/ion:ios-cloud-download.svg?color=%239b1308&width=180px&height=180px');
+	vertical-align: -0.125em;
+}
 .installer .details {
 	position: absolute;
 	top: 10px;
@@ -342,7 +365,7 @@ vertical-align: -0.125em;
 	animation: downloadSuccess 3.1s ease;
 }
 .installer label span:after {
-	content: 'Send to Administrator';
+	content: 'Download';
 	position: absolute;
 	width: 80%;
 	height: 100%;
@@ -351,7 +374,7 @@ vertical-align: -0.125em;
 }
 .installer label input:checked ~ span:after {
 	content: 'SUCCESS!';
-	animation: downloadState 3s;
+	animation: downloadState 30s;
 }
 .installer label span:before {
 	content: '';
@@ -364,7 +387,7 @@ vertical-align: -0.125em;
 	background: rgba(255,255,255,.2);
 }
 .installer label input:checked ~ span:before {
-	animation: downloadProgress 3s cubic-bezier(.67,.13,.1,.81);
+	animation: downloadProgress 30s cubic-bezier(.67,.13,.1,.81);
 }
 
 @keyframes downloadSuccess {
@@ -378,7 +401,7 @@ vertical-align: -0.125em;
 
 @keyframes downloadState {
 	0%, 95% {
-		content: 'SENDING REPORT...'
+		content: 'DOWNLOADING!...'
 	}
 	100% {
 		content: 'SUCCESS!'
